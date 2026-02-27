@@ -1,0 +1,78 @@
+{% load static %}
+<!document html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+
+        <div class="MaIn-div">
+
+                <div class="img-div">
+                    <img class="imgg1" src="{%static 'images/new.jpg'%}">
+                </div>
+                <div class="form-div">
+                    <h3>Sign Up</h3>
+                    <p class="writes">Join our store in just a few steps</p>
+
+
+
+                    <form  method="POST" action="">
+                            {% csrf_token %}
+<!--                        <input type="text" placeholder="Full Name">-->
+<!--                        <input type="email" placeholder="Email ">-->
+<!--                        <input type="tel" placeholder="Mobile number">-->
+<!--                        <input type="password" placeholder="Password">-->
+<!--                        <input type="password" placeholder="Confirm password">-->
+<!--                    -->
+                         <input type="text" placeholder="username" name="username">
+                        <input type="email" placeholder="email" name="email">
+
+                        <input type="password"  placeholder="password" name="password">
+
+                        <label class="NoTe">
+                            <input class="terM" type="checkbox">
+                            <p class="TEXT">By clicking Sign Up, you are agree to our <a class="Ist" href="">Terms of use</a>,<br>
+
+                                 including our <a class="Ist" href="">Privacy Policy</a> and <a class="Ist" href="">Cookie Use</a></p>
+                        </label>
+
+                        <button type="submit">Create Account</button>
+
+
+                    </form>
+
+                   <div class="bottom_icons">
+                            <div class="line1">or</div>
+
+                   </div>
+
+
+                    <div class="icons">
+                        <a href="https://accounts.google.com">
+                            <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png">
+                        </a>
+                        <a href="https://www.facebook.com/login">
+                            <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png">
+                        </a>
+                        <a href="https://appleid.apple.com/">
+                            <img src="https://cdn-icons-png.flaticon.com/512/0/747.png">
+                        </a>
+                    </div>
+
+
+
+
+                </div>
+
+        </div>
+
+
+
+
+</body>
+</html>

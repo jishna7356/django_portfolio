@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+      <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.css'%}" />
+      <!-- font awesome style -->
+      <link href="{%static 'css/font-awesome.min.css'%}" rel="stylesheet" />
+
+      <!-- responsive style -->
+      <link href="{%static 'css/responsive.css'%}" rel="stylesheet" />
+</head>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register_new'%}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login_new'%}">login</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'product'%}">product</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="">logout</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <script src=" {%static 'js/jquery-3.4.1.min.js'%}"></script>
+      <!-- popper js -->
+      <script src="{%static 'js/popper.min.js'%}"></script>
+      <!-- bootstrap js -->
+      <script src="{%static 'js/bootstrap.js'%}"></script>
+
+
+</body>
+</html>

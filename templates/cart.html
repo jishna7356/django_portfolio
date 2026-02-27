@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <style>
+        body{ font-family: sans-serif;margin: 20px;background: #f9f9f9;}
+        table{ width: 100%; border-collapse: collapse;background: #fff;}
+        th,td{ padding: 10px; border-bottom: 1px solid #ccc; text-align: left;}
+        th{ background: #007bff; color: white;}
+        .total{text-align: right; font-weight: bold;padding: 10px;}
+        a.button{ display: inline-block; padding: 10px 15px; background: #007bff; color: white;
+            border-radius: 5px; text-decoration: none;}
+        .remove-button { color:red; text-decoration: none; font-weight: bold;}
+    </style>
+</head>
+<body>
+<h1>Your Cart</h1>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Action</th>
+    </tr>
+
+    {% for item in cart_items %}
+    <tr>
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.get_total_price }}</td>
+        <td>
+            <a href="{% url 'remove_from_cart' item.id %} " class="remove-button">Remove</a>
+        </td>
+    </tr>
+    {% empty %}
+        <tr><td colspan="4">Your cart is empty.</td></tr>
+    {% endfor %}
+</table>
+
+<div class="total">
+    Total Price: ${{ total_price }}
+</div>
+<br>
+<a href="{% url 'product' %}" class="button"> Back to Products</a>
+</body>
+</html>
